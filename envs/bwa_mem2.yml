@@ -1,0 +1,22 @@
+name: bwa_mem2
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python=3.11
+
+  # Alignment
+  - bwa-mem2=2.3
+
+  # BAM processing
+  - samtools=1.22
+
+  # Useful for BAM QC
+  - htslib=1.22
+
+  # Optional utilities
+  - pigz
+  - parallel
+

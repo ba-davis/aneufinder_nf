@@ -14,13 +14,14 @@ process TRIMGALORE {
       path("*_val_1.fq.gz"),
       path("*_val_2.fq.gz"),
       emit: trimmed_reads
-    path "*_trimming_report.txt"
+
+    path "*_trimming_report.txt", emit: reports
 
     script:
     """
     trim_galore \
         --paired \
-	--fastqc \
+        --fastqc \
         --cores ${task.cpus} \
         ${reads[0]} \
         ${reads[1]}
